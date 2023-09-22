@@ -1,46 +1,3 @@
-#button-container{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-template-areas:
-    "title title title" /* Title spans all columns */
-    "button1 button2 button3"
-    "button4 button5 button6"
-    "button7 button8 button9";
-}
-
-#button-container h3 {
-    grid-area: title; /* Position the title in the "title" area */
-}
-
-#button-container button {
-    width: 100%;
-    text-align: center;
-    grid-area: auto;
-    cursor: pointer;
-    font-size: 24px; /* Adjust font size as needed */
-    font-weight: bold; /* Make the text bold */
-    background-color: #fff; /* Set a white background color */
-    padding: 25px;
-    height:86px /* Adjust padding for spacing */
-}
-
-/* Apply styles to specific buttons to create the Tic Tac Toe grid effect */
-#button1, #button4, #button7 {
-    border-left: none; /* Remove left border */
-}
-
-#button3,#button6, #button9 {
-    border-right: none; /* Remove right border */
-}
-
-#button3, #button2, #button1 {
-    border-top: none; /* Remove top border */
-}
-
-#button7, #button8, #button9{
-    border-bottom: none; /* Remove bottom border */
-}
-
 body,h1,h2,h3,p{
     margin:0;
     padding:0
@@ -50,13 +7,11 @@ body,h1,h2,h3,p{
     font-family: "Comic Sans MS", cursive;
 }
 
-/* Set the background color to black and text color to orange */
 body {
     background-color: black;
     color: orange;
 }
 
-/* Center the game board and player information */
 main {
     display: flex;
     justify-content: space-around;
@@ -64,6 +19,7 @@ main {
     flex-wrap: wrap;
     padding: 20px
 }
+
 #player-info-left,
 #player-info-right{
     flex:1;
@@ -92,12 +48,10 @@ main {
     margin: 10px;
 }
 
-/* Style the player information */
 .player {
     margin-bottom: 20px;
 }
 
-/* Style the text indicating the current player's turn and winner */
 #player-turn,
 #winner-text {
     text-align: center;
@@ -115,6 +69,48 @@ h2 {
 }
 footer{
     text-align: center;
+}
+
+#button-container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-areas:
+    "title title title" 
+    "button1 button2 button3"
+    "button4 button5 button6"
+    "button7 button8 button9";
+}
+
+#button-container h3 {
+    grid-area: title; 
+}
+
+#button-container button {
+    width: 100%;
+    text-align: center;
+    grid-area: auto;
+    cursor: pointer;
+    font-size: 24px; 
+    font-weight: bold; 
+    background-color: white;
+    padding: 25px;
+    height:86px 
+}
+
+#button1, #button4, #button7 {
+    border-left: none; 
+}
+
+#button3,#button6, #button9 {
+    border-right: none; 
+}
+
+#button3, #button2, #button1 {
+    border-top: none; 
+}
+
+#button7, #button8, #button9{
+    border-bottom: none; 
 }
 
 .draw-state{
