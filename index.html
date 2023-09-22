@@ -8,65 +8,73 @@
 </head>
 <body>
     <header>
-        <h1>Welcome to Tic Tac Toe</h1>
+        <h1>Welcome to Tic Tac Toe with your designer, Lex!</h1>
+        <section id="front-page">
+            <h2>Player Setup</h2>
+            <form id="player-form">
+                <button id="start-button">Start Game</button>
+            </form>
+        </section>
     </header>
 
     <main>
         <!-- Front Page -->
-        <section id="front-page">
-            <h2>Player Setup</h2>
-            <form id="player-form">
-                <div>
-                    <label for="player1">Player 1 (🐸):</label>
-                    <input type="text" id="player1" placeholder="Enter name for Player 1" required>
-                </div>
-                <div>
-                    <label for="player2">Player 2 (🦀):</label>
-                    <input type="text" id="player2" placeholder="Enter name for Player 2" required>
-                </div>
-                <button id="start-button">Start Game</button>
-            </form>
-        </section>
-
-        <!-- Game Board -->
-        <section id="game-board" class=>
-            <h2>Tic Tac Toe</h2>
-            <article id="player-turn">
-                <p>Current Player's Turn: <span id="current-player-name"></span></p>
-                <article id="button-container">
-                    <h3>Game Container</h3>
-                    <!-- Create 9 buttons within the container -->
-                    <button class="cell" id="button1"></button>
-                    <button class="cell" id="button2"></button>
-                    <button class="cell" id="button3"></button>
-                    <button class="cell" id="button4"></button>
-                    <button class="cell" id="button5"></button>
-                    <button class="cell" id="button6"></button>
-                    <button class="cell" id="button7"></button>
-                    <button class="cell" id="button8"></button>
-                    <button class="cell" id="button9"></button>
-                </article>
-                <!-- The grid cells will be dynamically generated using JavaScript -->
-            </article>
-        </section>
-
-        <!-- Player Information -->
-        <aside id="player-info" class="hidden">
+        <section id="player-info-left">
+            <!-- Player 1 Info -->
             <article class="player">
                 <h3>Player 1 (🐸)</h3>
+                <div>
+                    <label for="player1"></label>
+                    <input type="text" id="player1" placeholder="Enter name for Player 1" required>
+                </div>
                 <p>Name: <span id="player1-name"></span></p>
                 <p>Wins: <span id="player1-wins">0</span></p>
             </article>
+        </section>
+        
+        <!-- Game Board -->
+        <section id ="game-container">
+            <section id="game-board" class=>
+                <h2>Tic Tac Toe</h2>
+                <article id="player-turn">
+                    <p>What's going on?  <span id="current-player-name"></span></p>
+                    <article id="button-container">
+                        <h3>Game Container</h3>
+                        <!-- Create 9 buttons within the container -->
+                        <button class="cell" id="button1"></button>
+                        <button class="cell" id="button2"></button>
+                        <button class="cell" id="button3"></button>
+                        <button class="cell" id="button4"></button>
+                        <button class="cell" id="button5"></button>
+                        <button class="cell" id="button6"></button>
+                        <button class="cell" id="button7"></button>
+                        <button class="cell" id="button8"></button>
+                        <button class="cell" id="button9"></button>
+                    </article>
+                    <p id="winner text"></p>
+                    <!-- The grid cells will be dynamically generated using JavaScript -->
+                </article>
+            </section>
+        </section>
+        <!-- Player Information -->
+        
+        <!-- Player Information (Right) -->
+        <section id="player-info-right">
+            <!-- Player 2 Info -->
             <article class="player">
                 <h3>Player 2 (🦀)</h3>
+                <div>
+                    <label for="player2"></label>
+                    <input type="text" id="player2" placeholder="Enter name for Player 2" required>
+                </div>
                 <p>Name: <span id="player2-name"></span></p>
                 <p>Wins: <span id="player2-wins">0</span></p>
             </article>
-        </aside>
+        </section>
     </main>
 
     <footer>
-        <p>Lex's Tic Tac Toe Game</p>
+        <p>&copy;&trade;&reg;Keep calm and swag on</p>
     </footer>
 
     <script src="main.js"></script>
