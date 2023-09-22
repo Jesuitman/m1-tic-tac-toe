@@ -116,3 +116,10 @@ h2 {
 footer{
     text-align: center;
 }
+
+.draw-state{
+    background-image:url('Ron_Perlman.jpg');
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}

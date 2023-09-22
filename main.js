@@ -6,7 +6,9 @@ var gameBoard = ["","","","","","","","",""]
 var gameActive = true
 
 function clickButton(buttonIndex) {
-    if (gameActive && gameBoard[buttonIndex] === "") {
+    if (!gameActive || !playerNamesFilled() || gameBoard[buttonIndex] === !"") {
+        return;
+    }
         gameBoard[buttonIndex] = currentPlayer
         document.getElementById(`button${buttonIndex + 1}`).textContent = currentPlayer
 
@@ -22,9 +24,11 @@ function clickButton(buttonIndex) {
             announceResult("Draw!!!!")
             gameActive = false
             autoResetGame()
+            document.querySelector("head").classList.add('draw-state');
+            document.querySelector("body").classList.add('draw-state');
         }
     }
-}
+
 
 function checkWin() {
     var winPatterns = [
@@ -82,6 +86,8 @@ function resetGame() {
     }
     updatePlayerTurn()
     announceResult("")
+    document.querySelector("head").classList.remove('draw-state');
+    document.querySelector("body").classList.remove('draw-state');
 }
 
 function autoResetGame() {
@@ -92,13 +98,14 @@ function autoResetGame() {
 
 document.getElementById('start-button').addEventListener('click', (event) => {
     event.preventDefault();
-    const player1Name = document.getElementById('player1').value;
-    const player2Name = document.getElementById('player2').value;
 
-    if (player1Name && player2Name) {
-        document.getElementById('player1-name').textContent = player1Name;
-        document.getElementById('player2-name').textContent = player2Name;
+    if (playerNamesFilled()) {
 
+        var player1Name = document.getElementById('player1').value;
+        var player2Name = document.getElementById('player2').value;
+
+        document.getElementById("player1-name").textContent = player1Name
+        document.getElementById("player2-name").textContent = player2Name
         // Show player information and hide the setup form
         document.getElementById('player-info').classList.remove('hidden');
         document.getElementById('front-page').classList.add('hidden');
@@ -108,3 +115,13 @@ document.getElementById('start-button').addEventListener('click', (event) => {
         alert('Please enter names for both players.');
     }
 });
+
+function playerNamesFilled(){
+    var player1Name = document.getElementById('player1').value;
+    var player2Name = document.getElementById('player2').value;
+
+    if (!player1Name || !player2Name){
+        return false
+    }
+    return true
+}
