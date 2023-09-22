@@ -1,0 +1,41 @@
+#button-container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-areas:
+    "title title title" /* Title spans all columns */
+    "button1 button2 button3"
+    "button4 button5 button6"
+    "button7 button8 button9";
+}
+
+#button-container h3 {
+    grid-area: title; /* Position the title in the "title" area */
+}
+
+#button-container button {
+    width: 100%;
+    text-align: center;
+    grid-area: auto;
+    cursor: pointer;
+    font-size: 18px; /* Adjust font size as needed */
+    font-weight: bold; /* Make the text bold */
+    background-color: #fff; /* Set a white background color */
+    padding: 20px; /* Adjust padding for spacing */
+}
+
+/* Apply styles to specific buttons to create the Tic Tac Toe grid effect */
+#button1, #button4, #button7 {
+    border-left: none; /* Remove left border */
+}
+
+#button3,#button6, #button9 {
+    border-right: none; /* Remove right border */
+}
+
+#button3, #button2, #button1 {
+    border-top: none; /* Remove top border */
+}
+
+#button7, #button8, #button9{
+    border-bottom: none; /* Remove bottom border */
+}
