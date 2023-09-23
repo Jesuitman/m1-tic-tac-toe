@@ -13,7 +13,7 @@ If you want to try out Nightmare mode you have to disable lines of code in the c
 To try out Chaos mode, you just have to enable lines 170 to 184. 
 
 📷 Preview of App:
-sampleFinal.gif
+![sample video of the project](https://github.com/Jesuitman/m1-tic-tac-toe/blob/main/sampleFinal.gif)
 🍎 Context:
 I spent a few long nights working on this straight, but because i wast have several breakthroughs I did not feel it necessary to slow down or mitigate my workload. I achieved almost all of the goals i set out to do on this project, even doing one of the extensions. I hope to hear back from teachers on how to do the second part
 
