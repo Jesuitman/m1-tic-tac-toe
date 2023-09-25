@@ -28,19 +28,19 @@ var systemFonts = ['American Typewriter','Andale Mono','Arial','Arial Black','Ar
 
 function checkWin() {
     var winPatterns = [
-          [0, 1, 2], [3, 4, 5], [6, 7, 8],
-          [0, 3, 6], [1, 4, 7], [2, 5, 8],
-          [0, 4, 8], [2, 4, 6]
-      ]
+        [0, 1, 2], [3, 4, 5], [6, 7, 8],
+        [0, 3, 6], [1, 4, 7], [2, 5, 8],
+        [0, 4, 8], [2, 4, 6]
+    ]
     for (var i = 0; i < winPatterns.length; i++) {
-          var pattern = winPatterns[i]
-          var a = pattern[0]
-          var b = pattern[1]
-          var c = pattern[2]
-          if (gameBoard[a] !== '' && gameBoard[a] === gameBoard[b] && gameBoard[b] === gameBoard[c]) {
-              return true
-          }
-      }
+        var pattern = winPatterns[i]
+        var a = pattern[0]
+        var b = pattern[1]
+        var c = pattern[2]
+        if (gameBoard[a] !== '' && gameBoard[a] === gameBoard[b] && gameBoard[b] === gameBoard[c]) {
+            return true
+        }
+    }
     return false
 }
 
