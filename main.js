@@ -15,6 +15,16 @@ for (var i = 0; i < buttons.length; i++) {
     })(i))
 }
 
+var nightmareModeActive = false
+
+var systemFonts = ['American Typewriter','Andale Mono','Arial','Arial Black','Arial Narrow','Arial Rounded MT Bold','Arial Unicode MS',
+'Avenir','Avenir Next','Avenir Next Condensed','Baskerville','Big Caslon','Bodoni 72','Bodoni 72 Oldstyle','Bodoni 72 Smallcaps',
+'Bradley Hand','Brush Script MT','Chalkboard','Chalkboard SE','Chalkduster','Charter','Cochin','Comic Sans MS','Copperplate','Courier',
+'Courier New','Didot','DIN Alternate','DIN Condensed','Futura','Geneva','Georgia','Gill Sans','Helvetica','Helvetica Neue','Herculanum',
+'Hoefler Text','Impact','Lucida Grande','Luminari','Marker Felt','Menlo','Microsoft Sans Serif','Monaco','Noteworthy','Optima','Palatino',
+'Papyrus','Phosphate','Rockwell','Savoye LET','SignPainter','Skia','Snell Roundhand','Tahoma','Times','Times New Roman','Trattatello','Trebuchet MS',
+'Verdana','Zapfino',]
+
 function checkWin() {
     var winPatterns = [
           [0, 1, 2], [3, 4, 5], [6, 7, 8],
@@ -89,99 +99,43 @@ function playerNamesFilled(){
     return true
 }
 
-//Nightmare mode! DO NOT USE IF EPILEPTIC
+function randomizeFont() {
+    document.body.style.fontFamily = "serif"
+    var fontIndex = Math.floor(Math.random() * systemFonts.length);
+    var randomFont = systemFonts[fontIndex];
 
-// var systemFonts = [
-// 'American Typewriter',
-// 'Andale Mono',
-// 'Arial',
-// 'Arial Black',
-// 'Arial Narrow',
-// 'Arial Rounded MT Bold',
-// 'Arial Unicode MS',
-// 'Avenir',
-// 'Avenir Next',
-// 'Avenir Next Condensed',
-// 'Baskerville',
-// 'Big Caslon',
-// 'Bodoni 72',
-// 'Bodoni 72 Oldstyle',
-// 'Bodoni 72 Smallcaps',
-// 'Bradley Hand',
-// 'Brush Script MT',
-// 'Chalkboard',
-// 'Chalkboard SE',
-// 'Chalkduster',
-// 'Charter',
-// 'Cochin',
-// 'Comic Sans MS',
-// 'Copperplate',
-// 'Courier',
-// 'Courier New',
-// 'Didot',
-// 'DIN Alternate',
-// 'DIN Condensed',
-// 'Futura',
-// 'Geneva',
-// 'Georgia',
-// 'Gill Sans',
-// 'Helvetica',
-// 'Helvetica Neue',
-// 'Herculanum',
-// 'Hoefler Text',
-// 'Impact',
-// 'Lucida Grande',
-// 'Luminari',
-// 'Marker Felt',
-// 'Menlo',
-// 'Microsoft Sans Serif',
-// 'Monaco',
-// 'Noteworthy',
-// 'Optima',
-// 'Palatino',
-// 'Papyrus',
-// 'Phosphate',
-// 'Rockwell',
-// 'Savoye LET',
-// 'SignPainter',
-// 'Skia',
-// 'Snell Roundhand',
-// 'Tahoma',
-// 'Times',
-// 'Times New Roman',
-// 'Trattatello',
-// 'Trebuchet MS',
-// 'Verdana',
-// 'Zapfino',
-// ]
+    var randomColor = '#' + Math.floor(Math.random()*16777215).toString(16)
 
-// function randomizeFont() {
-//     document.body.style.fontFamily = "serif"
-//     const fontIndex = Math.floor(Math.random() * systemFonts.length);
-//     const randomFont = systemFonts[fontIndex];
+    document.body.style.fontFamily = randomFont;
+    document.head.style.fontFamily = randomFont
+    document.body.style.color = randomColor
+    document.head.style.color = randomColor
+}
 
-//     const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16)
+document.getElementById("nightmare-button").addEventListener("click",function(){
+    if(!nightmareModeActive){
+        intervalId = setInterval(randomizeFont, 50)
+        nightmareModeActive = true
+        document.getElementById("nightmare-button").textContent = "Stop Nightmare Mode"
+    } else {
+        clearInterval(intervalId)
+        nightmareModeActive = false
+        document.getElementById("nightmare-button").textContent = "Nightmare Mode"
+    }
+})
 
-//     document.body.style.fontFamily = randomFont;
-//     document.head.style.fontFamily = randomFont
-//     document.body.style.color = randomColor
-//     document.head.style.color = randomColor
-// }
-// setInterval(randomizeFont, 50)
+function randomizeElementSizes() {
+    var elements = document.querySelectorAll('*'); 
 
-//Chaos Mode! Dont try this! Unless told to
+    for (var i=0;i<elements.length;i++){
+        var element = elements[i]
+        var randomSize = Math.floor(Math.random() * 91) + 10;
 
-// function randomizeElementSizes() {
-//     const elements = document.querySelectorAll('*'); // Select all elements on the page
+        element.style.width = randomSize + 'px';
+        element.style.height = randomSize + 'px';
+    }
+}
 
-//     elements.forEach((element) => {
-//         // Generate a random size between 10 and 100 pixels (you can adjust the range)
-//         const randomSize = Math.floor(Math.random() * 91) + 10;
-
-//         // Set the width and height of the element to the random size
-//         element.style.width = randomSize + 'px';
-//         element.style.height = randomSize + 'px';
-//     });
-// }
-
-// setInterval(randomizeElementSizes,50)
+document.getElementById("chaos-button").addEventListener("click",function(){
+    setInterval(randomizeElementSizes,50)
+})

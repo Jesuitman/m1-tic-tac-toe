@@ -1,9 +1,9 @@
 body,h1,h2,h3,p{
     margin:0;
-    padding:0
+    padding:0;
 }
 
-* {
+body,head{
     font-family: "Comic Sans MS", cursive;
 }
 
@@ -118,4 +118,26 @@ footer{
     background-size:cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+}
+
+#nightmare-button{
+    position:fixed;
+    top:0;
+    right:0;
+    cursor:pointer
+}
+
+#chaos-button{
+    position:fixed;
+    top:0;
+    left:0;
+    cursor:not-allowed
+}
+
+#rick-astley-button{
+    position: fixed;
+    bottom: 0;
+    left:50%;
+    transform:translateX(-50%);
+    cursor:pointer
 }

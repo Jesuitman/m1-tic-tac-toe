@@ -1,5 +1,5 @@
 💭 Abstract:
-This is a friendly game of tictactoe that can be playable with two players. I had originally planned to make it vs the computer and that is something i would liek to do down the road, but for now this is making me happy. when you play it make sure you try to see what happens when you get a draw!
+This is a friendly game of tictactoe that can be playable with two players. I had originally planned to make it vs the computer and that is something i would like to do down the road, but for now this is making me happy. when you play it make sure you try to see what happens when you get a draw! I have added functionality for three buttons on the page which all do fairly unique things when pressed. give them a shot! but I would hold off if you have a seizure disorder
 
 💻 Installation instructions:
 To clone this repository and use on your local machine:
@@ -9,8 +9,6 @@ Clone down your new repository to your local machine
 Cd into the repository on your local machine
 Open the repository in your text editor
 You will have access to the HTML, CSS, DOMupdates, and JavaScript files
-If you want to try out Nightmare mode you have to disable lines of code in the css from lines 6 to 8, then you have to enable the code in the main.js file from lines 94 to 170.
-To try out Chaos mode, you just have to enable lines 170 to 184. 
 
 📷 Preview of App:
 ![sample video of the project](https://github.com/Jesuitman/m1-tic-tac-toe/blob/main/sampleFinal.gif)
