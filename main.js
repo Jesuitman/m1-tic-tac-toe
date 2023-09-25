@@ -16,6 +16,7 @@ for (var i = 0; i < buttons.length; i++) {
 }
 
 var nightmareModeActive = false
+var chaosModeActive = false
 
 var systemFonts = ['American Typewriter','Andale Mono','Arial','Arial Black','Arial Narrow','Arial Rounded MT Bold','Arial Unicode MS',
 'Avenir','Avenir Next','Avenir Next Condensed','Baskerville','Big Caslon','Bodoni 72','Bodoni 72 Oldstyle','Bodoni 72 Smallcaps',
@@ -137,5 +138,13 @@ function randomizeElementSizes() {
 }
 
 document.getElementById("chaos-button").addEventListener("click",function(){
-    setInterval(randomizeElementSizes,50)
+    if (!chaosModeActive){
+        intervalId = setInterval(randomizeElementSizes,50)
+        chaosModeActive = true
+        document.getElementById("chaos-button").textContent = "Disable Chaos Mode"
+    } else {
+        clearInterval(intervalId)
+        chaosModeActive = false
+        document.getElementById("chaos-button").textContent = "Chaos Mode"
+    }
 })
