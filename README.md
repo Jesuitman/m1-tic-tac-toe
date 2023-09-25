@@ -162,5 +162,3 @@ The README is formatted well and gives new contributors and employers sufficient
 Overview of project and goals, technologies used, your code architecture, future features, challenges, wins, and any other reflections
 Setup instructions
 Screenshots or video of your functioning app
-
-To enable nightmare mode functionality, make sure to disable lines 6 to 8 in the css!
