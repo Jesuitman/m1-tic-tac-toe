@@ -1,4 +1,3 @@
-updatePlayerTurn()
 
 function announceResult(result) {
     document.getElementById("current-player-name").textContent = result
@@ -7,6 +6,8 @@ function announceResult(result) {
 function updatePlayerTurn() {
     document.getElementById("current-player-name").textContent = `Current Player Turn is: ${currentPlayer} `
 }
+
+updatePlayerTurn()
 
 var updatePlayerWins = (player) => {
     var winsElement = document.getElementById(player === frogEomji ? 'player1-wins' : 'player2-wins');
