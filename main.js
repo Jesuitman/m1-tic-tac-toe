@@ -134,7 +134,7 @@ function randomizeElementSizes() {
 
     for (var i=0;i<elements.length;i++){
         var element = elements[i]
-        var randomSize = Math.floor(Math.random() * 910) + 10;
+        var randomSize = Math.floor(Math.random() * 91) + 10;
 
         element.style.width = randomSize + 'px';
         element.style.height = randomSize + 'px';
