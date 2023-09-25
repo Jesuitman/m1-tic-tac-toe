@@ -1,3 +1,5 @@
+updatePlayerTurn()
+
 function announceResult(result) {
     document.getElementById("current-player-name").textContent = result
 }
