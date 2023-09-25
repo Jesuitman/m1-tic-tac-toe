@@ -70,7 +70,11 @@ function clickButton(buttonIndex) {
 }
 
 function resetGame() {
-    currentPlayer = frogEomji
+    if (currentPlayer === frogEomji){
+    currentPlayer = crabEmoji
+    } else {
+        currentPlayer = frogEomji
+    }
     gameBoard = ["","","","","","","","",""]
     gameActive = true
     
