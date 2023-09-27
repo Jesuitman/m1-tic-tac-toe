@@ -15,17 +15,6 @@ for (var i = 0; i < buttons.length; i++) {
     })(i))
 }
 
-var nightmareModeActive = false
-var chaosModeActive = false
-
-var systemFonts = ['American Typewriter','Andale Mono','Arial','Arial Black','Arial Narrow','Arial Rounded MT Bold','Arial Unicode MS',
-'Avenir','Avenir Next','Avenir Next Condensed','Baskerville','Big Caslon','Bodoni 72','Bodoni 72 Oldstyle','Bodoni 72 Smallcaps',
-'Bradley Hand','Brush Script MT','Chalkboard','Chalkboard SE','Chalkduster','Charter','Cochin','Comic Sans MS','Copperplate','Courier',
-'Courier New','Didot','DIN Alternate','DIN Condensed','Futura','Geneva','Georgia','Gill Sans','Helvetica','Helvetica Neue','Herculanum',
-'Hoefler Text','Impact','Lucida Grande','Luminari','Marker Felt','Menlo','Microsoft Sans Serif','Monaco','Noteworthy','Optima','Palatino',
-'Papyrus','Phosphate','Rockwell','Savoye LET','SignPainter','Skia','Snell Roundhand','Tahoma','Times','Times New Roman','Trattatello','Trebuchet MS',
-'Verdana','Zapfino',]
-
 function checkWin() {
     var winPatterns = [
         [0, 1, 2], [3, 4, 5], [6, 7, 8],
@@ -103,52 +92,3 @@ function playerNamesFilled(){
     }
     return true
 }
-
-function randomizeFont() {
-    document.body.style.fontFamily = "serif"
-    var fontIndex = Math.floor(Math.random() * systemFonts.length);
-    var randomFont = systemFonts[fontIndex];
-
-    var randomColor = '#' + Math.floor(Math.random()*16777215).toString(16)
-
-    document.body.style.fontFamily = randomFont;
-    document.head.style.fontFamily = randomFont
-    document.body.style.color = randomColor
-    document.head.style.color = randomColor
-}
-
-document.getElementById("nightmare-button").addEventListener("click",function(){
-    if(!nightmareModeActive){
-        intervalId = setInterval(randomizeFont, 50)
-        nightmareModeActive = true
-        document.getElementById("nightmare-button").textContent = "Stop Nightmare Mode"
-    } else {
-        clearInterval(intervalId)
-        nightmareModeActive = false
-        document.getElementById("nightmare-button").textContent = "Nightmare Mode"
-    }
-})
-
-function randomizeElementSizes() {
-    var elements = document.querySelectorAll('*'); 
-
-    for (var i=0;i<elements.length;i++){
-        var element = elements[i]
-        var randomSize = Math.floor(Math.random() * 91) + 10;
-
-        element.style.width = randomSize + 'px';
-        element.style.height = randomSize + 'px';
-    }
-}
-
-document.getElementById("chaos-button").addEventListener("click",function(){
-    if (!chaosModeActive){
-        intervalId = setInterval(randomizeElementSizes,50)
-        chaosModeActive = true
-        document.getElementById("chaos-button").textContent = "Disable Chaos Mode"
-    } else {
-        clearInterval(intervalId)
-        chaosModeActive = false
-        document.getElementById("chaos-button").textContent = "Chaos Mode"
-    }
-})

@@ -112,32 +112,3 @@ footer{
 #button7, #button8, #button9{
     border-bottom: none; 
 }
-
-.draw-state{
-    background-image:url('Ron_Perlman.jpg');
-    background-size:cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
-
-#nightmare-button{
-    position:fixed;
-    top:0;
-    right:0;
-    cursor:pointer
-}
-
-#chaos-button{
-    position:fixed;
-    top:0;
-    left:0;
-    cursor:not-allowed
-}
-
-#rick-astley-button{
-    position: fixed;
-    bottom: 0;
-    left:50%;
-    transform:translateX(-50%);
-    cursor:pointer
-}
