@@ -53,8 +53,6 @@ function clickButton(buttonIndex) {
         announceResult("Draw!!!!")
         gameActive = false
         autoResetGame()
-        document.querySelector("head").classList.add('draw-state')
-        document.querySelector("body").classList.add('draw-state')
     }
 }
 
@@ -73,8 +71,6 @@ function resetGame() {
     }
     updatePlayerTurn()
     announceResult("")
-    document.querySelector("head").classList.remove('draw-state')
-    document.querySelector("body").classList.remove('draw-state')
 }
 
 function autoResetGame() {
